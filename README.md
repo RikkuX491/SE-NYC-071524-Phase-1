@@ -1,10 +1,10 @@
 # Lecture # 5 - DOM Events
 
 ## Lecture Topics
-- [ ] Explain the importance of event handling in modern web applications
-- [ ] Explain how callback functions are used with event listeners
-- [ ] Write the code to add `click` and `submit` event listeners to elements using the `.addEventListener()` method
-- [ ] Explain the purpose of the `.preventDefault()` method
+- Explain the importance of event handling in modern web applications
+- Explain how callback functions are used with event listeners
+- Write the code to add `click` and `submit` event listeners to elements using the `.addEventListener()` method
+- Explain the purpose of the `.preventDefault()` method
 
 ## Deliverables
 We've been asked to build a website for a new restaurant, Flatburger, that displays a menu of food served at the restaurant.
