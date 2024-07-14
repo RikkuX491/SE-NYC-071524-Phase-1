@@ -14,7 +14,7 @@
 |3 | JavaScript Data Structures & Array Iteration |[03_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/03_starter)|||
 |4 | DOM Manipulation                 	          |[04_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/04_starter)|||
 |5 | DOM Events                       	          |[05_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/05_starter)|||
-|6 | Communicating with the Server    	          ||||
+|6 | Communicating with the Server    	          |[06_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/06_starter)|||
 |7 | POST Requests                    	          ||||
 |8 | PATCH & DELETE Requests          	          ||||
 |9 | Communicating with External APIs 	          ||||
