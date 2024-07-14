@@ -1,5 +1,6 @@
 # Lecture # 5 - DOM Events
-## SWBAT
+
+## Lecture Topics
 - [ ] Explain the importance of event handling in modern web applications
 - [ ] Explain how callback functions are used with event listeners
 - [ ] Write the code to add `click` and `submit` event listeners to elements using the `.addEventListener()` method
