@@ -1,5 +1,6 @@
 # Lecture # 4 - DOM Manipulation
-## SWBAT
+
+## Lecture Topics
 - [ ] Explain what the DOM is
 - [ ] Traverse the DOM tree
 - [ ] Select single DOM elements with `.querySelector()` and `.getElementById()`
