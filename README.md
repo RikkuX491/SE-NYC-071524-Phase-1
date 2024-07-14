@@ -1,15 +1,15 @@
 # Lecture # 4 - DOM Manipulation
 
 ## Lecture Topics
-- [ ] Explain what the DOM is
-- [ ] Traverse the DOM tree
-- [ ] Select single DOM elements with `.querySelector()` and `.getElementById()`
-- [ ] Select multiple elements with `.querySelectorAll()` and `.getElementsByClassName()`
-- [ ] Add text content to an element with `.textContent`
-- [ ] Create elements with `document.createElement()`
-- [ ] Append elements to the DOM with `.appendChild()` and `.append()`
-- [ ] Remove content with `.remove()`
-- [ ] Explain the dangers of `.innerHTML` and when it's safe to use
+- Explain what the DOM is
+- Traverse the DOM tree
+- Select single DOM elements with `.querySelector()` and `.getElementById()`
+- Select multiple elements with `.querySelectorAll()` and `.getElementsByClassName()`
+- Add text content to an element with `.textContent`
+- Create elements with `document.createElement()`
+- Append elements to the DOM with `.appendChild()` and `.append()`
+- Remove content with `.remove()`
+- Explain the dangers of `.innerHTML` and when it's safe to use
 
 ## Deliverables 
 We've been asked to build a website for a new restaurant, Flatburger, that displays a menu of food served at the restaurant.
