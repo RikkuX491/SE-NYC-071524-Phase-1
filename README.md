@@ -1,5 +1,6 @@
 # Lecture # 8 - PATCH & DELETE Requests
-## SWBAT
+
+## Lecture Topics
 - [ ] Send a `PATCH` request using HTML forms and JavaScript
 - [ ] Send a `DELETE` request using HTML buttons and JavaScript
 
