@@ -48,6 +48,14 @@
 
 ## Setup
 
+Make sure that you are inside of the directory (folder) with the `index.html` file.
+
+You can run the `ls` command in the terminal to view the files and directories (folders) that are within your current directory (folder):
+
+```sh
+ls
+```
+
 While inside of the directory (folder) with the `index.html` file, in the terminal, run these commands in the terminal to create a folder named `src` and a file named `index.js` inside of the `src` folder:
 
 ```sh
