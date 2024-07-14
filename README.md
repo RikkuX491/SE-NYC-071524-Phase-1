@@ -1,50 +1,50 @@
 # Lecture # 1 - JavaScript Fundamentals
 
 ## Lecture Topics
-- [ ] Define what a variable is
-- [ ] Initialize variables in JavaScript
-- [ ] Retrieve and change the value of variables
-- [ ] Explain the difference between:
+- Define what a variable is
+- Initialize variables in JavaScript
+- Retrieve and change the value of variables
+- Explain the difference between:
     - Using `const` for declaring variables
     - Using `let` for declaring variables
-- [ ] Use `console.log()` to inspect the values of variables and print those values to the console
-- [ ] Use the `debugger` statement to invoke a debugger in the browser
-- [ ] Explain the difference between the following data types:
+- Use `console.log()` to inspect the values of variables and print those values to the console
+- Use the `debugger` statement to invoke a debugger in the browser
+- Explain the difference between the following data types:
     - `number`
     - `string`
     - `boolean`
-- [ ] Use the `typeof` operator to check the data type of a value or variable's value
-- [ ] Explain the difference between:
+- Use the `typeof` operator to check the data type of a value or variable's value
+- Explain the difference between:
     - The `Number()` function
     - The `String()` function
     - The `Boolean()` function
     - The `parseInt()` function
-- [ ] Understand the difference between:
+- Understand the difference between:
     - Adding `number`s with the `+` operator
     - Subtracting `number`s with the `-` operator
     - Multiplying `number`s with the `*` operator
     - Dividing `number`s with the `/` operator
     - Getting the remainder when dividing `number`s with the `%` operator
-- [ ] Concatenate strings with the `+` operator
-- [ ] Interpolate Variables and Other JavaScript Expressions Inside Template Literals
-- [ ] Explain the difference between the following equality operators:
+- Concatenate strings with the `+` operator
+- Interpolate Variables and Other JavaScript Expressions Inside Template Literals
+- Explain the difference between the following equality operators:
     - strict equality operator `===`
     - strict inequality operator `!==`
     - loose equality operator `==`
     - loose inequality operator `!=`
-- [ ] Compare numbers with relational operators:
+- Compare numbers with relational operators:
     - greater than (`>`)
     - greater than or equals (`>=`)
     - less than (`<`)
     - less than or equals (`<=`)
-- [ ] Review syntax differences between `if`, `else if` and `else` statements, ternary operators / expressions, and `switch` statements
-- [ ] Explain the difference between the following logical operators:
+- Review syntax differences between `if`, `else if` and `else` statements, ternary operators / expressions, and `switch` statements
+- Explain the difference between the following logical operators:
     - `!` NOT
     - `&&` AND
     - `||` OR
-- [ ] Run JavaScript (`.js`) scripts in the browser
-- [ ] Run JavaScript (`.js`) scripts using `node` in the terminal
-- [ ] Enter a `node` REPL session to quickly test simple JavaScript code
+- Run JavaScript (`.js`) scripts in the browser
+- Run JavaScript (`.js`) scripts using `node` in the terminal
+- Enter a `node` REPL session to quickly test simple JavaScript code
 
 ## Setup
 
