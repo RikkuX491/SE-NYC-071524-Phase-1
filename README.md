@@ -7,7 +7,7 @@
 - [ ] Use asynchronous JavaScript to retrieve data
 
 
-|No. | Lecture                          | Starter 	| Example / Lecture Code 	| Solution 	|
+|No. | Lecture                          | Starter 	| Example Code 	| Solution 	|
 |----|------------------------------	|:-----:	|--------	|---------	|
 |1 | JavaScript Fundamentals                      ||||
 |2 | Functions & Scope                	          ||||
