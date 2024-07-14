@@ -1,19 +1,19 @@
 # Lecture # 2 - Functions & Scope
 
 ## Lecture Topics
-- [ ] Describe what functions are and their central importance in JS
-- [ ] Understand how to declare and call functions
-- [ ] Understand how to return a value from a function
-- [ ] Understand the purpose of function parameters and default arguments
-- [ ] Define a function using a function expression
-- [ ] Define a function using an arrow function expression
-- [ ] Review syntax differences between regular functions and arrow functions
-- [ ] Explain the difference between:
+- Describe what functions are and their central importance in JS
+- Understand how to declare and call functions
+- Understand how to return a value from a function
+- Understand the purpose of function parameters and default arguments
+- Define a function using a function expression
+- Define a function using an arrow function expression
+- Review syntax differences between regular functions and arrow functions
+- Explain the difference between:
     - Block scope
     - Function scope
     - Global scope
-- [ ] Understand what it means that functions are first-class objects
-- [ ] Explain what a higher-order function is
+- Understand what it means that functions are first-class objects
+- Explain what a higher-order function is
 
 ## Setup
 
