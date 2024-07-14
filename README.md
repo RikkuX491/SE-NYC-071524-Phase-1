@@ -1,5 +1,6 @@
 # Lecture # 6 - Communicating With The Server
-## SWBAT
+
+## Lecture Topics
 - [ ] Explain the differences between a server and a client
 - [ ] Describe the request-response cycle
 - [ ] Explain what asynchronous means in JavaScript
