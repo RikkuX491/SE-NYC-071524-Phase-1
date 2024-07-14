@@ -1,5 +1,6 @@
 # Lecture # 3 - JavaScript Data Structures & Array Iteration
-## SWBAT
+
+## Lecture Topics
 - [ ] Describe what arrays and objects are and their central importance in JS
 - [ ] Understand how to add elements to an array, remove elements from an array, and replace elements in an array
 - [ ] Understand how to modify objects
