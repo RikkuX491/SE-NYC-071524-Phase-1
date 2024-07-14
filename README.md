@@ -1,11 +1,11 @@
 # Lecture # 6 - Communicating With The Server
 
 ## Lecture Topics
-- [ ] Explain the differences between a server and a client
-- [ ] Describe the request-response cycle
-- [ ] Explain what asynchronous means in JavaScript
+- Explain the differences between a server and a client
+- Describe the request-response cycle
+- Explain what asynchronous means in JavaScript
     - Observe how to handle promises using `.then()`
-- [ ] Observe how `json-server` is used to create a local API
+- Observe how `json-server` is used to create a local API
     - Name the different HTTP Verbs and describe their actions
     - Observe how to render data to the browser window after a request made with `fetch()`
     - Observe how to send a `GET` request using fetch()
