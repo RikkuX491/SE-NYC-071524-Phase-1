@@ -6,6 +6,36 @@
 - Write the code to add `click` and `submit` event listeners to elements using the `.addEventListener()` method
 - Explain the purpose of the `.preventDefault()` method
 
+## Setup
+
+Make sure that you are inside of the directory (folder) with the `index.html` file and the `src` directory (folder).
+
+You can run the `ls` command in the terminal to view the files and directories (folders) that are within your current directory (folder):
+
+```sh
+ls
+```
+
+For Mac users, run this command in the terminal to open the `index.html` file on your browser to run the application:
+
+```sh
+open index.html
+```
+
+For Windows users, run this command in the terminal to open the `index.html` file on your browser to run the application:
+
+```sh
+explorer.exe index.html
+```
+
+For `Google Chrome` browsers:
+
+Once your browser loads the content from your `index.html` file, open `Developer Tools` in your browser and click the `Console` tab within `Developer Tools` to view any output from `console.log()` statements executed within your `index.js` file.
+
+For `Safari` browsers:
+
+Once your browser loads the content from your `index.html` file, open the `Web Inspector` in your browser and click the `Console` tab within the `Web Inspector` to view any output from `console.log()` statements executed within your `index.js` file.
+
 ## Deliverables
 We've been asked to build a website for a new restaurant, Flatburger, that displays a menu of food served at the restaurant.
 
