@@ -1,5 +1,6 @@
 # Lecture # 9 - Communicating With External APIs
-## SWBAT
+
+## Lecture Topics
 - [ ] Understand how to communicate with External APIs
 - [ ] Understand how to manipulate data retrieved from External APIs when making a `GET` request
 
