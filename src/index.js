@@ -1,36 +1,42 @@
-// console.log('hello')
+// Deliverable # 1
+const greeting = "Welcome to Flatburger!";
 
-// console.log(typeof 7)
+// Deliverable # 2
+const num1 = 7;
 
-// const user = "Alice Baker"
+// Deliverable # 3
+let num2 = "14";
 
-// console.log(`Hello ${user}!`)
+// Deliverable # 4
+console.log(typeof num2);
 
-let firstName = "Steve"
-let lastName = "Carris"
+// Deliverable # 5
+num2 = Number(num2);
 
-// if(firstName === "Alice" || lastName === "Baker"){
-//     console.log(`Hello ${firstName} ${lastName}`)
-// }
-// else if(firstName === "Bob"){
-//     console.log("What's up Bob?")
-// }
-// else{
-//     console.log("Invalid name!")
-// }
+// Deliverable # 6
+console.log(typeof num2);
 
-// const greetingPhrase = (firstName === "Alice" && lastName === "Baker") ? `Hello ${firstName} ${lastName}` : "Wrong name!"
-// console.log(greetingPhrase)
+// Deliverable # 7
+const sum = num1 + num2;
 
-switch(true){
-    case firstName === "Alice" || lastName === "Baker":
-        console.log(`Hello ${firstName} ${lastName}`)
-        break
-    
-    case firstName === "Bob":
-        console.log("What's up Bob?")
-        break
+// Deliverable # 8
+const sumString = `${num1} + ${num2} = ${sum}`;
 
-    default:
-        console.log("Invalid name!")
+// Deliverable # 9
+if(num1 === 7 || num1 === 49){
+    console.log("That's a lucky number!");
 }
+
+// Deliverable # 10
+else if(num1 > 7 && num1 < 49){
+    console.log("That might be a lucky number!");
+}
+
+// Deliverable # 11
+else{
+    console.log("That's not a lucky number.");
+}
+
+// Deliverable # 12
+const luckyPhrase = num1 === 7 && num2 === 7 ? "Lucky Sevens!" : "Better luck next time";
+console.log(luckyPhrase);
