@@ -81,7 +81,7 @@ function greetUser(name){
 
 // sellItem("banana");
 
-// Supermarket is known as a higher-order function since it accepts a function as an argument (stored in the purchaseItem parameter) and also returns a function
+// supermarket() is a higher-order function since it accepts a function as an argument (stored in the purchaseItem parameter) and also returns a function
 function supermarket(purchaseItem){
     // console.log(purchaseItem)
     alert("Welcome to Flatiron Supermarket!");
@@ -99,7 +99,7 @@ const sellItem = supermarket(function (item) {
     alert(`You purchased an ${item}!`)
 });
 
-// sellItem();
+sellItem();
 
 // Additional info about arrow functions:
 
