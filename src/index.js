@@ -1,208 +1,74 @@
-// Review - callback functions
-function login(getUserGreeting){
-    // console.log(greetUser);
-    const greeting = getUserGreeting("John");
-    console.log(greeting);
-}
+// Deliverable # 1 solution
+const foodsArray = [];
 
-// login((username) => {
-//     return `Hello ${username}!`;
-// });
-
-// login((username) => `Hello ${username}!`);
-// login(username => `Hello ${username}!`);
-
-// Example code from today's lecture
-// const num1 = 7;
-// const num2 = 14;
-// const num3 = 21;
-
-// console.log(num1, num2, num3);
-
-// Array
-const numbers = [7, 14, 21];
-console.log(numbers);
-
-// Adding an element at the end of an array
-numbers.push(28);
-console.log(numbers);
-
-numbers.push(35, 42);
-console.log(numbers);
-
-// Adding an element at the front of an array
-numbers.unshift(6);
-// console.log(numbers.unshift(6));
-console.log(numbers);
-
-// Getting the length of an array
-console.log(numbers.length);
-
-// Removing an element from the back of an array
-numbers.pop();
-console.log(numbers);
-
-// Removing an element from the front of an array
-numbers.shift();
-console.log(numbers);
-
-// Accessing array indices
-console.log(numbers[0]);
-console.log(numbers[2]);
-
-// An array with different values with different data types
-const differentThings = [7, "hello", true, (num1) => num1 * 2];
-console.log(differentThings);
-console.log(differentThings[3]);
-
-// const result = differentThings[3](4);
-// console.log(result);
-
-const multiplyByTwo = differentThings[3];
-const result = multiplyByTwo(5);
-console.log(result);
-
-// Get some elements from an array without modifying the original array
-console.log(numbers);
-console.log(numbers.slice(1, 4));
-console.log(numbers.slice(1, 2));
-console.log(numbers.slice(1, 2)[0]);
-console.log(numbers);
-
-// Remove element(s) in between the array indices
-// numbers.splice(1)
-numbers.splice(1, 2);
-console.log(numbers)
-console.log([2, ...numbers, 77]);
-
-// Modifying a value from an array
-console.log(numbers);
-numbers[1] = 101;
-console.log(numbers);
-
-// Objects
-const person = {
-    name: "Alice Baker",
-    age: 23,
-    isStudent: true,
-    speak: () => {
-        console.log("Hello there!");
-    }
+// Deliverable # 2 solution
+const burgerObject = {
+    name: "Flatburger"
 };
 
-console.log(person);
-console.log(person.name);
-console.log(person.age);
-console.log(person.isStudent);
-console.log(person.speak);
-person.speak();
-// console.log(person.speak());
+// Deliverable # 3 solution
+burgerObject.description = "Our signature Flatburger which is a super delicious cheeseburger that'll leave you wanting another Flatburger! It's too good to be true!";
 
-// Adding a new key and value pair to the object referenced by the person variable
-person.phoneNumber = "(123) 456-7890";
-// person['phoneNumber'] = "(123) 456-7890";
-console.log(person);
+// Deliverable # 4 solution
+burgerObject['price'] = 14.99;
 
-// We cannot reassign a new value to a variable declared with const
-// person = {
-//     name: "Bob"
-// }
+// Deliverable # 5 solution
+foodsArray.push(burgerObject);
 
-// ...but we change information within an object or array
-// person.name = "Bob Carris";
-person['name'] = "Bob Carris";
-console.log(person);
-
-// for loop vs while loop
-for(let counter = 1; counter <= 10; counter++){
-    console.log(counter);
-}
-
-// The counter variable is block-scoped and cannot be accessed from outside of the for loop
-// console.log(counter);
-
-// let counter = 1;
-// console.log(counter)
-// counter = counter + 1;
-// counter += 1;
-// counter++;
-// console.log(counter)
-
-let counter2 = 10;
-while(counter2 >= 1){
-    console.log(counter2);
-    counter2--;
-}
-
-// Using a for loop to loop through an array
-const foods = ["pizza", "ice cream", "gyro"];
-
-for(let index = 0; index < foods.length; index++){
-    // console.log(foods[index]);
-}
-
-// Using the for...of statement to iterate over an array
-for(let food of foods){
-    // console.log(food);
-}
-
-const fruit = {
-    name: "apple",
-    price: "0.99",
-    color: "red"
+// Deliverable # 6 solution
+const burgerObject2 = {
+    name: "Maple Bacon Burger",
+    description: "A great option for a breakfast burger or a great option for brunch if you're hungry enough to eat 2 of these burgers!",
+    price: 7.99
 };
+foodsArray.push(burgerObject2);
 
-console.log(fruit);
+// Deliverable # 7
+const burgerObject3 = {
+    name: "Mushroom Burger",
+    description: "A mushroom burger with our exclusive Flatburger melted cheese!",
+    price: 11.99
+};
+foodsArray.push(burgerObject3);
+const burgerObject4 = {
+    name: "Avocado Bun Burger",
+    description: "A healthier take on our signature Flatburger but with avocado buns!",
+    price: 5.99
+};
+foodsArray.push(burgerObject4);
+const burgerObject5 = {
+    name: "Ramen Burger",
+    description: "If you love ramen and burgers, what are you waiting for? Order our exclusive ramen burger now!",
+    price: 13.99
+};
+foodsArray.push(burgerObject5);
 
-for(let key in fruit){
-    // console.log(key);
-    // console.log(fruit[key]);
+// Deliverable # 8
+for(let index = 0; index < foodsArray.length; index++){
+    console.log(foodsArray[index].name);
 }
 
-// Using the forEach() method to iterate through an array
-foods.forEach((food) => {
-    console.log(food);
+// Deliverable # 9
+for(const food of foodsArray){
+    console.log(food.description);
+}
+
+// Deliverable # 10
+foodsArray.forEach(food => {
+    console.log(food.price);
 });
 
-
-const people = [
-    {
-        name: "Alice",
-        age: 23
-    },
-    {
-        name: "Bob",
-        age: 34
-    },
-    {
-        name: "Eve",
-        age: 29
-    }
-];
-
-// Using the map() method to iterate through an array and return a new array with different information
-const names = people.map(person => {
-    return person.name;
+// Deliverable # 11
+foodsArray.find(food => {
+    return food.name === "Flatburger";
 });
-console.log(names);
 
-// Using the find() method to find an element from an array that meets a specified condition
-const foundPerson = people.find(person => {
-    return person.name === "Bob";
+// Deliverable # 12
+foodsArray.filter(food => {
+    return food.price < 10.99;
 });
-console.log(foundPerson);
 
-// Using the filter() method to return an array that contains multiple elements from an array that meet a specified condition
-const filteredPeople = people.filter(person => {
-    return person.age > 28;
-})
-console.log(filteredPeople);
-
-// Using the reduce() method to get a sum of the numbers in an array
-const numberValues = [6, 2, 8, 7];
-const total = numberValues.reduce((accumulator, number) => {
-    // console.log(number);
-    // console.log(accumulator);
-    return accumulator + number;
-}, 0);
-console.log(total);
+// Deliverable # 13
+foodsArray.map(food => {
+    return food.price;
+});
