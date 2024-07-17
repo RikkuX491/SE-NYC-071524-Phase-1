@@ -11,7 +11,7 @@
 |----|------------------------------	|:-----:	|--------	|---------	|
 |1 | JavaScript Fundamentals                      |[01_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/01_starter)|[01_example_code](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/01_example_code)|[01_solution](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/01_solution)|
 |2 | Functions & Scope                	          |[02_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/02_starter)|[02_example_code](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/02_example_code)|[02_solution](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/02_solution)|
-|3 | JavaScript Data Structures & Array Iteration |[03_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/03_starter)|[03_example_code](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/03_example_code)||
+|3 | JavaScript Data Structures & Array Iteration |[03_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/03_starter)|[03_example_code](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/03_example_code)|[03_solution](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/03_solution)|
 |4 | DOM Manipulation                 	          |[04_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/04_starter)|||
 |5 | DOM Events                       	          |[05_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/05_starter)|||
 |6 | Communicating with the Server    	          |[06_starter](https://github.com/RikkuX491/SE-NYC-071524-Phase-1/tree/06_starter)|||
