@@ -69,7 +69,6 @@ function addFoodImageToMenu(food){
     const restaurantMenu = document.getElementById('restaurant-menu')
     restaurantMenu.appendChild(foodImage)
 
-    // Deliverable # 1 solution: lines 73 - 75
     foodImage.addEventListener('click', () => {
         displayFoodDetails(food)
     })
@@ -81,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     displayFoodDetails(foods[0]);
 
-    // Deliverable # 2 solution: lines 85 - 105
     const newFoodForm = document.getElementById('new-food')
     newFoodForm.addEventListener('submit', (event) => {
         event.preventDefault()
