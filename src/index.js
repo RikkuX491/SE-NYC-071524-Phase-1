@@ -75,32 +75,24 @@ function addFoodImageToMenu(food){
     })
 }
 
-// Adding an event listener to document that will allow document to listen for the DOMContentLoaded event and execute code in response to the DOMContentLoaded event
-document.addEventListener('DOMContentLoaded', () => {
-    foods.forEach(addFoodImageToMenu)
+foods.forEach(addFoodImageToMenu)
 
-    displayFoodDetails(foods[0]);
+displayFoodDetails(foods[0]);
 
-    // Deliverable # 2 solution: lines 85 - 105
-    const newFoodForm = document.getElementById('new-food')
-    newFoodForm.addEventListener('submit', (event) => {
-        event.preventDefault()
+// Deliverable # 2 solution: lines 83 - 97
+const newFoodForm = document.getElementById('new-food')
+newFoodForm.addEventListener('submit', (event) => {
+    event.preventDefault()
 
-        const newNameInputElement = document.getElementById('new-name')
-        const newImageInputElement = document.getElementById('new-image')
-        const newDescriptionTextareaElement = document.getElementById('new-description')
+    const newNameInputElement = document.getElementById('new-name')
+    const newImageInputElement = document.getElementById('new-image')
+    const newDescriptionTextareaElement = document.getElementById('new-description')
 
-        if(newNameInputElement.value.length < 3){
-            alert("Name is too short!")
-        }
-        else{
-            const newFood = {
-                name: newNameInputElement.value,
-                image: newImageInputElement.value,
-                description: newDescriptionTextareaElement.value
-            }
-        
-            addFoodImageToMenu(newFood)
-        }
-    })
+    const newFood = {
+        name: newNameInputElement.value,
+        image: newImageInputElement.value,
+        description: newDescriptionTextareaElement.value
+    }
+    
+    addFoodImageToMenu(newFood)
 })
