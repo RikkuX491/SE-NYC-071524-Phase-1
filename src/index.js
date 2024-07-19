@@ -51,19 +51,56 @@ const foods = [
     }
 ]
 
-const restaurantMenu = document.getElementById('restaurant-menu')
+function displayFoodDetails(food){
+    const foodDetailImage = document.querySelector('.detail-image')
+    foodDetailImage.src = food.image
 
-foods.forEach(food => {
+    const foodName = document.querySelector('.name') 
+    foodName.textContent = food.name
+
+    const foodDescriptionDisplay = document.getElementById('description-display')
+    foodDescriptionDisplay.textContent = food.description
+}
+
+function addFoodImageToMenu(food){
     const foodImage = document.createElement('img')
     foodImage.src = food.image
+    
+    const restaurantMenu = document.getElementById('restaurant-menu')
     restaurantMenu.appendChild(foodImage)
+
+    // Deliverable # 1 solution: lines 73 - 75
+    foodImage.addEventListener('click', () => {
+        displayFoodDetails(food)
+    })
+}
+
+// Adding an event listener to document that will allow document to listen for the DOMContentLoaded event and execute code in response to the DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', () => {
+    foods.forEach(addFoodImageToMenu)
+
+    displayFoodDetails(foods[0]);
+
+    // Deliverable # 2 solution: lines 85 - 105
+    const newFoodForm = document.getElementById('new-food')
+    newFoodForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+
+        const newNameInputElement = document.getElementById('new-name')
+        const newImageInputElement = document.getElementById('new-image')
+        const newDescriptionTextareaElement = document.getElementById('new-description')
+
+        if(newNameInputElement.value.length < 3){
+            alert("Name is too short!")
+        }
+        else{
+            const newFood = {
+                name: newNameInputElement.value,
+                image: newImageInputElement.value,
+                description: newDescriptionTextareaElement.value
+            }
+        
+            addFoodImageToMenu(newFood)
+        }
+    })
 })
-
-const foodDetailImage = document.querySelector('.detail-image')
-foodDetailImage.src = foods[0].image
-
-const foodName = document.querySelector('.name') 
-foodName.textContent = foods[0].name
-
-const foodDescriptionDisplay = document.querySelector('#description-display')
-foodDescriptionDisplay.textContent = foods[0].description
