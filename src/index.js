@@ -8,7 +8,6 @@ fetch('http://localhost:3000/foods')
     foods.forEach(food => {
         addFoodImageToRestaurantMenu(food)
     })
-    // console.log(foods)
 })
 
 function addFoodImageToRestaurantMenu(food){
@@ -42,8 +41,8 @@ newFoodForm.addEventListener('submit', (event) => {
         image: newImageInputElement.value,
         description: newDescriptionInputElement.value
     }
-
-    // Optimistic Rendering approach - Render new food image first, then make POST request
+    
+    // Deliverable # 1 solution code - Optimistic Rendering
     // addFoodImageToRestaurantMenu(newFood)
 
     // fetch('http://localhost:3000/foods', {
@@ -54,21 +53,7 @@ newFoodForm.addEventListener('submit', (event) => {
     //     body: JSON.stringify(newFood)
     // })
 
-    // Pessimistic rendering approach - Make POST request first, then render food image in response to POST request
-    // fetch('http://localhost:3000/foods', {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(34)
-    // })
-    // .then(response => response.json())
-    // .then(newFood => addFoodImageToRestaurantMenu(newFood))
-    // .catch(() => alert("Error: Unable to add new food!"))
-    
-    // We can use .catch() to do something with the error
-    // .catch(error => console.log(error))
-
+    // Deliverable # 2 solution code - Pessimistic Rendering
     fetch('http://localhost:3000/foods', {
         method: "POST",
         headers: {
@@ -76,18 +61,8 @@ newFoodForm.addEventListener('submit', (event) => {
         },
         body: JSON.stringify(newFood)
     })
-    .then(response => {
-        if(response.ok){
-            response.json().then(newFood => addFoodImageToRestaurantMenu(newFood))
-        }
-        // else if(response.status === 400){
-        //     alert("Error: A bad request was made!")
-        // }
-        else{
-            // alert("Error: Unable to add new food!")
-            alert(`${response.status}: ${response.statusText}`)
-        }
-    })
+    .then(response => response.json())
+    .then(newFood => addFoodImageToRestaurantMenu(newFood))
 
     newFoodForm.reset()
 })
