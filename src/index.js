@@ -60,7 +60,7 @@ newFoodForm.addEventListener('submit', (event) => {
     //     headers: {
     //         "Content-Type": "application/json"
     //     },
-    //     body: JSON.stringify(34)
+    //     body: JSON.stringify(newFood)
     // })
     // .then(response => response.json())
     // .then(newFood => addFoodImageToRestaurantMenu(newFood))
