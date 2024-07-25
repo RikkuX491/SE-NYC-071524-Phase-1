@@ -1,3 +1,5 @@
+let foodsArray
+
 let currentlyDisplayedFoodId
 
 const restaurantMenu = document.getElementById('restaurant-menu')
@@ -5,7 +7,10 @@ const restaurantMenu = document.getElementById('restaurant-menu')
 fetch('http://localhost:3000/foods')
 .then(response => response.json())
 .then(foods => {
-    // console.log(foods)
+
+    foodsArray = foods
+    // console.log(foodsArray)
+
     displayFoodDetails(foods[0])
 
     foods.forEach(food => {
@@ -35,7 +40,13 @@ function addFoodImageToRestaurantMenu(food){
         })
         .then(response => {
             if(response.ok){
-                imgElement.remove()
+                // Update array
+                foodsArray = foodsArray.filter(f => {
+                    return food.id !== f.id
+                })
+
+                // Re-render restaurant menu images after the array is updated
+                renderRestaurantMenuImages()
             }
             else{
                 alert(`Error: Food # ${food.id} has already been deleted!`)
@@ -46,10 +57,8 @@ function addFoodImageToRestaurantMenu(food){
 }
 
 function displayFoodDetails(food){
-    // console.log(food)
-    // console.log(food.id)
     currentlyDisplayedFoodId = food.id
-    // console.log(currentlyDisplayedFoodId)
+
     const foodDetailImageElement = document.getElementsByClassName('detail-image')[0]
     foodDetailImageElement.src = food.image
     const foodNameElement = document.getElementsByClassName('name')[0]
@@ -58,6 +67,14 @@ function displayFoodDetails(food){
     foodDescriptionDisplayElement.textContent = food.description
     const numberInCartCountElement = document.getElementById('number-in-cart-count')
     numberInCartCountElement.textContent = food.number_in_cart
+}
+
+function renderRestaurantMenuImages(){
+    restaurantMenu.innerHTML = ""
+
+    foodsArray.forEach(food => {
+        addFoodImageToRestaurantMenu(food)
+    })
 }
 
 const newFoodForm = document.getElementById('new-food')
@@ -85,7 +102,16 @@ newFoodForm.addEventListener('submit', (event) => {
     .then(response => {
         if(response.ok){
             response.json().then(newFoodData => {
-                addFoodImageToRestaurantMenu(newFoodData)
+                // Update array
+                foodsArray.push(newFoodData)
+
+                // Re-render restaurant menu images after the array is updated
+                renderRestaurantMenuImages()
+
+                // console.log(foodsArray)
+                // foodsArray = [...foodsArray, newFoodData]
+
+                // addFoodImageToRestaurantMenu(newFoodData)
             })
         }
         else{
@@ -124,7 +150,22 @@ addToCartForm.addEventListener('submit', (event) => {
     })
     .then(response => {
         if(response.ok){
-            response.json().then(updatedFood => numberInCartCountElement.textContent = updatedFood.number_in_cart)
+            response.json().then(updatedFood => {
+                numberInCartCountElement.textContent = updatedFood.number_in_cart
+
+                // Update array
+                foodsArray = foodsArray.map(food => {
+                    if(food.id === updatedFood.id){
+                        return updatedFood
+                    }
+                    else{
+                        return food
+                    }
+                })
+
+                // Re-render restaurant menu images after the array is updated
+                renderRestaurantMenuImages()
+            })
         }
         else{
             alert(`Error: Unable to update Food # ${currentlyDisplayedFoodId}!`)
