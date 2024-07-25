@@ -1,8 +1,11 @@
+let currentlyDisplayedFoodId
+
 const restaurantMenu = document.getElementById('restaurant-menu')
 
 fetch('http://localhost:3000/foods')
 .then(response => response.json())
 .then(foods => {
+    // console.log(foods)
     displayFoodDetails(foods[0])
 
     foods.forEach(food => {
@@ -16,10 +19,37 @@ function addFoodImageToRestaurantMenu(food){
     imgElement.addEventListener('mouseover', () => {
         displayFoodDetails(food)
     })
+    // Remove the <img> element in response to a click event
+    imgElement.addEventListener('click', () => {
+
+        // Optimistic rendering approach to remove the <img> element from the DOM before making the DELETE request
+        // imgElement.remove()
+
+        // fetch(`http://localhost:3000/foods/${food.id}`, {
+        //     method: "DELETE"
+        // })
+
+        // Pessimistic rendering approach to remove the <img> element after the DELETE request is successful
+        fetch(`http://localhost:3000/foods/${food.id}`, {
+            method: "DELETE"
+        })
+        .then(response => {
+            if(response.ok){
+                imgElement.remove()
+            }
+            else{
+                alert(`Error: Food # ${food.id} has already been deleted!`)
+            }
+        })
+    })
     restaurantMenu.appendChild(imgElement)
 }
 
 function displayFoodDetails(food){
+    // console.log(food)
+    // console.log(food.id)
+    currentlyDisplayedFoodId = food.id
+    // console.log(currentlyDisplayedFoodId)
     const foodDetailImageElement = document.getElementsByClassName('detail-image')[0]
     foodDetailImageElement.src = food.image
     const foodNameElement = document.getElementsByClassName('name')[0]
@@ -72,7 +102,34 @@ addToCartForm.addEventListener('submit', (event) => {
     const numberToAddInputElement = document.getElementById('number-to-add')
     const numberInCartCountElement = document.getElementById('number-in-cart-count')
     const sum = Number(numberInCartCountElement.textContent) + Number(numberToAddInputElement.value)
-    numberInCartCountElement.textContent = sum
+
+    // Optimistic rendering approach to updating the DOM before making the PATCH request
+    // numberInCartCountElement.textContent = sum
+
+    // fetch(`http://localhost:3000/foods/${currentlyDisplayedFoodId}`, {
+    //     method: "PATCH",
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify({number_in_cart: sum})
+    // })
+
+    // Pessimistic rendering approach to updating the DOM after the PATCH request is successful
+    fetch(`http://localhost:3000/foods/${currentlyDisplayedFoodId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({number_in_cart: sum})
+    })
+    .then(response => {
+        if(response.ok){
+            response.json().then(updatedFood => numberInCartCountElement.textContent = updatedFood.number_in_cart)
+        }
+        else{
+            alert(`Error: Unable to update Food # ${currentlyDisplayedFoodId}!`)
+        }
+    })
 
     addToCartForm.reset()
 })
