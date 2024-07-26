@@ -1,3 +1,4 @@
+// Line 2 - Part of Deliverable # 1 solution code
 let currentlyDisplayedFoodId
 
 const restaurantMenu = document.getElementById('restaurant-menu')
@@ -5,7 +6,6 @@ const restaurantMenu = document.getElementById('restaurant-menu')
 fetch('http://localhost:3000/foods')
 .then(response => response.json())
 .then(foods => {
-    // console.log(foods)
     displayFoodDetails(foods[0])
 
     foods.forEach(food => {
@@ -19,37 +19,22 @@ function addFoodImageToRestaurantMenu(food){
     imgElement.addEventListener('mouseover', () => {
         displayFoodDetails(food)
     })
-    // Remove the <img> element in response to a click event
+
+    // Deliverable # 2 solution code - DELETE request with pessimistic rendering
     imgElement.addEventListener('click', () => {
-
-        // Optimistic rendering approach to remove the <img> element from the DOM before making the DELETE request
-        // imgElement.remove()
-
-        // fetch(`http://localhost:3000/foods/${food.id}`, {
-        //     method: "DELETE"
-        // })
-
-        // Pessimistic rendering approach to remove the <img> element after the DELETE request is successful
         fetch(`http://localhost:3000/foods/${food.id}`, {
             method: "DELETE"
         })
-        .then(response => {
-            if(response.ok){
-                imgElement.remove()
-            }
-            else{
-                alert(`Error: Food # ${food.id} has already been deleted!`)
-            }
-        })
+        .then(() => imgElement.remove())
     })
+    
     restaurantMenu.appendChild(imgElement)
 }
 
 function displayFoodDetails(food){
-    // console.log(food)
-    // console.log(food.id)
+    // Line 35 - Part of Deliverable # 1 solution code
     currentlyDisplayedFoodId = food.id
-    // console.log(currentlyDisplayedFoodId)
+
     const foodDetailImageElement = document.getElementsByClassName('detail-image')[0]
     foodDetailImageElement.src = food.image
     const foodNameElement = document.getElementsByClassName('name')[0]
@@ -103,18 +88,7 @@ addToCartForm.addEventListener('submit', (event) => {
     const numberInCartCountElement = document.getElementById('number-in-cart-count')
     const sum = Number(numberInCartCountElement.textContent) + Number(numberToAddInputElement.value)
 
-    // Optimistic rendering approach to updating the DOM before making the PATCH request
-    // numberInCartCountElement.textContent = sum
-
-    // fetch(`http://localhost:3000/foods/${currentlyDisplayedFoodId}`, {
-    //     method: "PATCH",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({number_in_cart: sum})
-    // })
-
-    // Pessimistic rendering approach to updating the DOM after the PATCH request is successful
+    // Deliverable # 1 solution code - PATCH request with pessimistic rendering
     fetch(`http://localhost:3000/foods/${currentlyDisplayedFoodId}`, {
         method: "PATCH",
         headers: {
@@ -122,14 +96,8 @@ addToCartForm.addEventListener('submit', (event) => {
         },
         body: JSON.stringify({number_in_cart: sum})
     })
-    .then(response => {
-        if(response.ok){
-            response.json().then(updatedFood => numberInCartCountElement.textContent = updatedFood.number_in_cart)
-        }
-        else{
-            alert(`Error: Unable to update Food # ${currentlyDisplayedFoodId}!`)
-        }
-    })
+    .then(response => response.json())
+    .then(updatedFood => numberInCartCountElement.textContent = updatedFood.number_in_cart)
 
     addToCartForm.reset()
 })
